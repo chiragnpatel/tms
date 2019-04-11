@@ -17,5 +17,9 @@ include './header.php';
         <span class="pull-right">
     </span>
     </h1>
+    <div class="padding15 nlp nrp">
+		<a href="all-orders.php" class="btn btn-primary">All orders</a>
+		<a href="/" class="btn btn-primary">Find Service</a>
+	</div>
 </div>
 <div class="clearfix"></div>
