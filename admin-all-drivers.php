@@ -3,15 +3,12 @@ require_once './config.php';
 if (!isset($_SESSION['loggedin']) || !$_SESSION['loggedin']) {
     header('Location: login.php');
 }
-if ($_SESSION['user']['role'] != 'transportadmin') {
+include './header.php';
+if ($_SESSION['user']['role'] != 'admin') {
     header('Location: login.php');
 }
-include './header.php';
-$transportId = $_SESSION['user']['id'];
-
-$sql = "SELECT * from drivers where transport_company_id = :transport_company_id  AND deleted_at is null";
+$sql = "SELECT * from drivers where deleted_at is null";
 $stmt = $DB->prepare($sql);
-$stmt->bindValue(":transport_company_id", $transportId);
 $stmt->execute();
 $result = $stmt->fetchAll();
 ?>
@@ -21,9 +18,6 @@ $result = $stmt->fetchAll();
         <span class="pull-right">
 	</span>
     </h1>
-    <div class="padding15 nlp nrp">
-        <a href="add-driver.php" class="btn btn-primary">Add new Driver</a>
-    </div>
 </div>
 <!-- List-table -->
 <div class="padding15 nlp nrp table-responsive">
@@ -63,3 +57,4 @@ $result = $stmt->fetchAll();
     </table>
 </div>
 <div class="clearfix"></div>
+

@@ -1,5 +1,14 @@
 <?php
 require_once './config.php';
+if ($_SESSION['user']) {
+    if ($_SESSION['user']['role'] == 'transportadmin') {
+        header("Location: transportadmin-dashboard.php");
+    } elseif ($_SESSION['user']['role'] == 'customer') {
+        header("Location: customer-dashboard.php");
+    } else {
+        header("Location: admin-dashboard.php");
+    }
+}
 if (isset($_POST["sub"])) {
   require_once "phpmailer/class.phpmailer.php";
 

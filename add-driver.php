@@ -15,9 +15,11 @@ if (isset($_POST['submit'])) {
     $driver_licence_number = $_POST['driver_licence_number'];
     $driver_home_address = $_POST['driver_home_address'];
     $driver_mobile_number = $_POST['driver_mobile_number'];
+    $created_at = date('Y-m-d H:i:s');
+    $transport_company_id = $_SESSION['user']['id'];
 //    var_dump($driver_age,$gender,$driver_home_address,$driver_licence_number,$driver_mobile_number,$driver_name); die;
-    $sql = "INSERT INTO `drivers` (`driver_name`, `gender`, `driver_age`,`driver_licence_number`,`driver_home_address`,`driver_mobile_number`) VALUES " .
-        "( :driver_name, :gender, :driver_age, :driver_licence_number, :driver_home_address, :driver_mobile_number)";
+    $sql = "INSERT INTO `drivers` (`driver_name`, `gender`, `driver_age`,`driver_licence_number`,`driver_home_address`,`driver_mobile_number`, `created_at`, `transport_company_id`) VALUES " .
+        "( :driver_name, :gender, :driver_age, :driver_licence_number, :driver_home_address, :driver_mobile_number, :created_at, :transport_company_id)";
     $stmt = $DB->prepare($sql);
     $stmt->bindValue(":driver_name", $driver_name);
     $stmt->bindValue(":gender", $gender);
@@ -25,6 +27,8 @@ if (isset($_POST['submit'])) {
     $stmt->bindValue(":driver_licence_number", $driver_licence_number);
     $stmt->bindValue(":driver_home_address", $driver_home_address);
     $stmt->bindValue(":driver_mobile_number", $driver_mobile_number);
+    $stmt->bindValue(":created_at", $created_at);
+    $stmt->bindValue(":transport_company_id", $transport_company_id);
     $stmt->execute();
 
     header("Location: all-drivers.php");

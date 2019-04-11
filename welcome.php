@@ -29,7 +29,6 @@ if (isset($_POST['role'])) {
         echo $ex->getMessage();
     }
 }
-
 include './header.php';
 ?>
     <div class="page-header">
