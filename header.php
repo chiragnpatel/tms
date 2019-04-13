@@ -50,7 +50,7 @@
             <li><a href="logout.php">Logout (<?php echo $_SESSION['user']['name'] ?>)</a></li>
             <?php } else { ?>
             <li><a href="login.php">Login</a></li>
-            <li><a href="index.php">Sign Up</a></li>
+            <li><a href="signup.php">Sign Up</a></li>
             <?php } ?>
           </ul>
         </div>
