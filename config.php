@@ -12,7 +12,7 @@ define('PROJECT_NAME', 'TransportManagementSystem');
 define('DB_DRIVER', 'mysql');
 define('DB_SERVER', 'localhost');
 define('DB_SERVER_USERNAME', 'root');
-define('DB_SERVER_PASSWORD', '');
+define('DB_SERVER_PASSWORD', '123456');
 define('DB_DATABASE', 'tms');
 
 // must end with a slash
