@@ -1,3 +1,4 @@
+<?php $bodyClass="transparent-bg";?>
 <?php
 require_once './config.php';
 if ($_SESSION['user']) {
@@ -11,8 +12,8 @@ if ($_SESSION['user']) {
 }
 include './header.php'; 
 ?>
-<div class="container">
-<h1 style="text-align: center;">Transport Managment System</h1>
+<div class="banner" style="background-image: url('img/banner-truck.jpg');">
+	<h1 class="title">Transport Managment System</h1>
 </div>
 <?php
 include './footer.php';

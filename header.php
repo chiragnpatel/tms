@@ -20,7 +20,7 @@
     <![endif]-->
     <script src="bootstrap/js/jquery-1.9.0.min.js"></script>
   </head>
-  <body>
+  <body class='<?php echo $bodyClass?>'>
 
     <!-- Facebook SDK --><!-- 
     <div id="fb-root"></div>
