@@ -50,7 +50,6 @@ include './header.php';
             <?php foreach ($result as $data) : ?>
                 <option value="<?php echo $data['id']; ?>"><?php echo $data['driver_name']; ?></option>
             <?php endforeach; ?>
-            
         </select>
 
     </div>

@@ -18,7 +18,7 @@ include './header.php';
     </span>
     </h1>
     <div class="padding15 nlp nrp">
-		<a href="all-orders.php" class="btn btn-primary">All orders</a>
+		<a href="customer-all-orders.php" class="btn btn-primary">All orders</a>
 		<a href="find-service.php" class="btn btn-primary">Find Service</a>
 	</div>
 </div>

@@ -6,9 +6,10 @@ if (!isset($_SESSION['loggedin']) || !$_SESSION['loggedin']) {
 if ($_SESSION['user']['role'] != 'transportadmin') {
     header('Location: login.php');
 }
-$transport_company_id = $_SESSION['user']['id'];
-$trucks = "SELECT * FROM trucks where deleted_at is null ";
+$transportId = $_SESSION['user']['id'];
+$trucks = "SELECT * FROM trucks where transport_company_id = :transport_company_id  AND deleted_at is null";
 $stmt = $DB->prepare($trucks);
+$stmt->bindValue(":transport_company_id", $transportId);
 $stmt->execute();
 $results = $stmt->fetchAll();
 include './header.php';

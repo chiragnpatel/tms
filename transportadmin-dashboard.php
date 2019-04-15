@@ -24,7 +24,7 @@ include './header.php';
         <a href="all-drivers.php" class="btn btn-primary"> All Drivers</a>
         <a href="all-trucks.php" class="btn btn-primary"> All Trucks</a>
         <a href="all-orders.php" class="btn btn-primary"> All Orders</a>
-        <a href="#" class="btn btn-primary"> Submit Request</a>
+        <a href="submit-a-requests.php" class="btn btn-primary"> Submit a Request</a>
     </div>
 </div>
 <div class="clearfix"></div>

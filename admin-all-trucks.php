@@ -7,7 +7,7 @@ include './header.php';
 if ($_SESSION['user']['role'] != 'admin') {
     header('Location: login.php');
 }
-$sql = "SELECT * from trucks where deleted_at is null";
+$sql = "SELECT * from trucks where  transport_company_id  deleted_at is null";
 $stmt = $DB->prepare($sql);
 $stmt->execute();
 $result = $stmt->fetchAll();
